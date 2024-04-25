@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class ATM_TheoMenhGia {
+    int soTien;
+    + {abstract} ATM_TheoMenhGia menhGiaKeTiep(ATM_TheoMenhGia m)
+    + {abstract} void rutTien(int soTien);
+}
+
+ATM_TheoMenhGia <|--- MenhGia
+ATM_TheoMenhGia <|--- MenhGiaThapNhat
+MenhGia --> ATM_TheoMenhGia:ketiep
+
+note bottom of MenhGiaThapNhat
+    Phuong thuc rut tien:
+    soto = sotien / menhgia;
+    insoto = menhgia;
+
+
+
+end note
+
+note bottom of MenhGia
+    Phuong thuc rut tien:
+    soto = sotien / menhgia;
+    sodu = sotien % menhgia;
+    Neu(soto) > 0 --> in so to: menhgia
+    Neu(sodu) > 0:
+        chuyen so du cho thanh phan ke tiep
+
+end note
+
+
+@enduml

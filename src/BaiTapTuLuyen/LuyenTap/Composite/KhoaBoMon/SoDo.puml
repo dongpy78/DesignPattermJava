@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractKhoa {
+    #protected String name
+    #protected String children
+    +{abstract} void add(AbstractKhoa k)
+    +{abstract} void remove(AbstractKhoa k)
+    +{abstract} String getHierarchy(String s)
+}
+
+class GiangVien {
+
+}
+
+class BoMon {
+
+}
+
+AbstractKhoa <|-- GiangVien
+AbstractKhoa <|-- BoMon
+AbstractKhoa <--* BoMon: children
+
+@enduml

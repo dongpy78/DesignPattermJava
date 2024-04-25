@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+abstract class KeHoachHocTap {
+    #String ten
+    +{abstract} void add(KeHoachHocTap k)
+    +{abstract} void remove(KeHoachHocTap k)
+    +{abstract} int getSoTC()
+    +{abstract} int getHocPhi()
+    +{abstract} String getthongTin()
+}
+
+class MonHoc {
+    #int soTC, HP
+}
+
+class KeHoachChung {
+
+}
+
+KeHoachHocTap <|-- MonHoc
+KeHoachHocTap <|-- KeHoachChung
+KeHoachChung *--> KeHoachHocTap: khht
+
+note bottom of MonHoc
+    nho nhat la Component
+end note
+
+note bottom of KeHoachChung
+     Composite
+end note
+
+@enduml

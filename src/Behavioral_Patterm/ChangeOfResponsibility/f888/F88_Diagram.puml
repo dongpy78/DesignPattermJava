@@ -1,0 +1,58 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class NhanVienF88
+class ChuTich
+class NhanVien
+NhanVienF88 <|-- ChuTich
+NhanVienF88 <-- NhanVien
+NhanVien ---> NhanVienF88: capTren
+NhanVienF88 <-- MainF88
+
+abstract class NhanVienF88 {
+    String ten;
+    String chucVu;
+    int hangMucXuLyVay;
+    + {abstract} NhanVienF88 capCaoHon(NhanVienF88 nv)
+    + {abstract} String xuLyKhoanVay(int tienVay)
+}
+
+class NhanVien {
+    + String xuLyKhoanVay(int tienVay)
+}
+
+
+note right of NhanVien::xuLyKhoanVay
+    - Kiểm tra nếu tienVay<=hangMucXuLyVay;
+    trả về: Chức vụ tên xử lý khoản hangMucXuLyVay
+        (Vd: Bảo vệ A làm xử lý khoản vay 500000)
+    Ngược lại: Chuyển công việc xử lý vay cho cấp trên;
+end note
+
+class ChuTich {
+    + String xuLyKhoanVay(int tienVay)
+}
+
+note right of NhanVienF88::capCaoHon
+    gán nv cho biến capTen
+    trả về biến cấp trên
+    Chú ý: không cài đặt đối với lớp ChuTich
+end note
+
+note right of ChuTich::xuLyKhoanVay
+    - Kiểm tra nếu tienVay<=hangMucXuLyVay;
+    trả về: Chức vụ tên xử lý khoản hangMucXuLyVay
+        (Vd: Bảo vệ A làm xử lý khoản vay 500000)
+    Ngược lại: Chuyển công việc xử lý vay cho cấp trên;
+end note
+
+
+note right of MainF88
+    trong phuương thức main:
+    + tạo các đối tượng là NhanVienF88 thuộc lớp NhanVien
+    + Tạo một đối tượng NhanVienF88 thuộc lớp ChuTich
+    + Kết nối chuỗi các đối tượng
+    + Gọi phương thức xuLyKhoanVay trên đối tượng đầu tiên của chuỗi
+end note
+
+@enduml

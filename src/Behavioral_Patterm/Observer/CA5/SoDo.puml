@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Interface TaiKhoanATM {
+    bool kiemTraSoDu(int SoTien)
+    void nhanThongBao(int soTienRut, bool thanhCong)
+}
+
+class TaiKhoan {
+    int soDu;
+    String tenTK;
+    + duaTheVaoATM();
+    + rutTheKhoATM();
+}
+
+class ATM {
+    +nhanThe(TaiKhoanATM atm)
+    + traThe(TaiKhoanATM atm)
+    + rutTien(int soTien)
+}
+
+TaiKhoanATM <|..TaiKhoan
+
+TaiKhoanATM <-- ATM:theATM
+TaiKhoan --> ATM:atm
+
+note bottom  of TaiKhoan
+   Observer
+end note
+
+note bottom  of ATM
+   Observer
+end note
+
+@enduml

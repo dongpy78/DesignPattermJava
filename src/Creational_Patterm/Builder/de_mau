@@ -1,0 +1,5 @@
+dùng builder pattern
+- xây dựng lớp Kế Hoạch Học Tập sử dụng phương thức toString
+  để in ra tên sinh viên và danh sách môc học.
+- lớp Sinh Viên bao gồm: họ tên sinh viên, mã sinh viên, quê quán.
+- lớp Môn Học bao gồm: tên môn học, số tín chỉ, mã môn học
