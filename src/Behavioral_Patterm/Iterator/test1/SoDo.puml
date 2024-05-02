@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Iterator63 {
+    +Object first();
+    +Object next();
+    +Object current();
+    +bool isDone();
+}
+
+abstract Collection63 {
+    Iterator63 createIterator63();
+}
+
+class ArrayIterator63 {
+}
+
+class ArrayCollections63 {
+    -int[] arr;
+    +int getItem(int i);
+    +int count();
+}
+
+Iterator63 <|... ArrayIterator63
+Collection63 <--- ArrayCollections63
+ArrayIterator63 ---|> ArrayCollections63: colection
+
+
+
+@enduml
