@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract AbstractMucDien {
+    int min, max, gia;
+    +{abstract} AbstractMucDien mucDienKeTiep(AbstractMucDien m);
+    +{abstract} int xuLy(int sokw)
+}
+
+AbstractMucDien <|--- MucDien
+AbstractMucDien <|--- MucDienCaoNhat
+MucDien ---> AbstractMucDien:ketiep
+
+@enduml

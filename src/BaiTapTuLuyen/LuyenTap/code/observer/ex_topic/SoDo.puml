@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ITopicObserver {
+    void recieveNewTopic(String s)
+    void updateTopic(int i, String s)
+}
+
+class Topic {
+    void attach(ITopicObserver observer)
+    void detach(ITopicObserver observer)
+    void updateTopic(ITopicObserver observer)
+
+}
+
+class ThanhVienA {
+    void login(Topic t)
+    void logout(Topic t)
+}
+
+class ThanhVienB {
+    void login(Topic t)
+    void logout(Topic t)
+}
+
+
+ITopicObserver <|-- Topic:observer
+ITopicObserver <|.. ThanhVienA
+ITopicObserver <|.. ThanhVienB
+Topic <-- ThanhVienA:t
+Topic <-- ThanhVienB:t
+
+
+
+
+
+
+@enduml
