@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IListenerObserver {
+    + void onClick()
+}
+
+class Button {
+    + void click();
+}
+
+class Activity {
+    - int count
+}
+
+IListenerObserver <|.. Activity
+Activity --> Button
+Button --> IListenerObserver:activity
+@enduml

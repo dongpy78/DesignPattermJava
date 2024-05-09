@@ -21,12 +21,15 @@ import java.util.List;
             while (iterator.hasNext()) {
                 System.out.println(iterator.next());
             }
-            System.out.println("Cach 2");
 
+
+            System.out.println("Cach 2");
             Iterator<Integer> iterator2 = list.iterator();
             iterator2.forEachRemaining(integer -> System.out.println(integer));
 
             List<MonHoc> monHocs = new ArrayList<>(Arrays.asList(
+                    new MonHoc("The duc", 1),
+                    new MonHoc("The duc", 1),
                     new MonHoc("The duc", 1)
 
             ));

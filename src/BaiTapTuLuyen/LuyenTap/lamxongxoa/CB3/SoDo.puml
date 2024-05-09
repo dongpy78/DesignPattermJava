@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract Abstract_MucDien {
+    String bac;
+    int min, max, muc_gia;
+    void Abstract_MucDien mucDienKeTiep(int m)
+    void xuLy(int sokw)
+}
+
+Abstract_MucDien <|--- MucDien
+Abstract_MucDien <|--- MucDienCaoNhat
+MucDien ---> Abstract_MucDien:ketiep
+
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract AbstractXepLoai {
+    int mucDiem;
+    String xepLoai;
+    void AbstractXepLoai xepLoaiKeTiep(AbstractXepLoai x)
+    void xuLy(int diemDatDuoc)
+}
+
+AbstractXepLoai <|--- XepLoai
+AbstractXepLoai <|--- XepLoaiCaoNhat
+XepLoai ---> AbstractXepLoai:ketiep
+
+@enduml

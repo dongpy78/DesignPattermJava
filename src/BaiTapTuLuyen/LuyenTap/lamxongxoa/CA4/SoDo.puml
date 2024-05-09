@@ -9,8 +9,8 @@ interface ITopicObserver {
 class Topic {
     void attach(ITopicObserver observer)
     void detach(ITopicObserver observer)
-    void updateTopic(ITopicObserver observer)
-
+    void addTopic(String s)
+    void updateTopic(int i, String s)
 }
 
 class ThanhVienA {
@@ -23,16 +23,12 @@ class ThanhVienB {
     void logout(Topic t)
 }
 
-
-ITopicObserver <--* Topic:observer
 ITopicObserver <|.. ThanhVienA
 ITopicObserver <|.. ThanhVienB
+ITopicObserver <-- Topic:observer
+
 Topic <-- ThanhVienA:t
 Topic <-- ThanhVienB:t
-
-
-
-
 
 
 @enduml

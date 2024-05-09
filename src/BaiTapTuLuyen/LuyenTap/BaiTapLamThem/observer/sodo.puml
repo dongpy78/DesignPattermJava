@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IListennerATM {
+    boolean kiemTraSoDu(int withdrawal)
+    void nhanThongBao(boolean qualified, int withdrawal)
+}
+
+class ATM {
+    IListennerATM tk;
+    void login()
+    void logout()
+    boolean kiemTraRutTien(int withdrawal)
+    void rutTien(int withdrawal)
+}
+
+class TaiKhoan {
+    int soDu;
+    public void login(ATM atm)
+    public void logout(ATM atm)
+}
+
+IListennerATM <|... TaiKhoan
+ATM ---> IListennerATM:tk
+TaiKhoan ---> ATM:atm
+
+@enduml
