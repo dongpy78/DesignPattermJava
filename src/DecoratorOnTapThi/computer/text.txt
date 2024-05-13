@@ -1,0 +1,3 @@
+Nâng cấp máy tính. Các thành phần cơ bản của một PC bao gồm: Mainboard, CPU, Ram,
+storage, sceen. Khi lắp ráp một máy tính, phương thức build sẽ được gọi để lắp ráp các thành phần (chỉ đơn giản là trả về chuỗi mô tả cấu hình ứng dụng với các thành phần
+cơ bản của máy tính). Phương thức value sẽ trả về tổng giá trị của các thành phần cơ bản của máy tính. Sau một thời gian s dụng máy tính có thể được nâng cấp các thành phần chính như CPU, Ram, Storage, Screen tùy thuộc vào mong muốn của người dùng. Do đặc trưng của các thành phần máy tính mà khi nâng cấp một số thành phần có thể được thêm vào hoặc thay thế. Sinh viên hãy sử dụng mẫu Decorator để thực hiện yêu cầu trên.

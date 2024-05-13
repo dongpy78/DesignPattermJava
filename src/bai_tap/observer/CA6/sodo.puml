@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IListenerPlayerData {
+    + void listen(PlayerData data)
+}
+
+class PlayerData {
+    int thoiGian, luotChoi, diem;
+}
+
+class Dashboard {
+
+}
+
+IListenerPlayerData <|.. Dashboard
+PlayerData <-- Dashboard:listen
+PlayerData --> IListenerPlayerData
+
+
+
+
+@enduml
