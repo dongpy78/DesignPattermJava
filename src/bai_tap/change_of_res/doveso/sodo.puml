@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract AbstractDoVeSo {
+    +{abstract} AbstractDoVeSo veSoKeTiep(AbstractDoVeSo ketiep)
+    +{abstract} String doVeSo(String veSo)
+}
+
+class GiaiThuong {}
+
+class GiaiThuongCaoNhat {}
+
+AbstractDoVeSo <|--- GiaiThuong
+GiaiThuong ---> AbstractDoVeSo:ketiep
+AbstractDoVeSo <|--- GiaiThuongCaoNhat
+
+
+
+@enduml

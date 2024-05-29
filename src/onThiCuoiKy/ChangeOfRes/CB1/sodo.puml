@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractMenhGiaATM {
+    +{abstract} AbstractMenhGiaATM menhGiaKeTiep(AbstractMenhGiaATM m)
+    +{abstract} void xuLy(int soTien)
+}
+
+class MenhGia {
+    int menhGia;
+}
+
+class MenhGiaThapNhat {}
+
+AbstractMenhGiaATM <|--- MenhGia
+MenhGia ---> AbstractMenhGiaATM:ketiep
+AbstractMenhGiaATM <|--- MenhGiaThapNhat
+
+@enduml
