@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract Coffee {
+    + void getPrice()
+}
+
+class DefaultCoffe {
+
+}
+
+abstract DecoratorCoffee {
+
+}
+
+class MilkCoffee {
+
+}
+
+class IceCoffee {
+
+}
+
+Coffee <|-- DefaultCoffe
+Coffee <|-- DecoratorCoffee
+DecoratorCoffee --> Coffee:cf
+
+DecoratorCoffee <|-- MilkCoffee
+DecoratorCoffee <|-- IceCoffee
+
+@enduml

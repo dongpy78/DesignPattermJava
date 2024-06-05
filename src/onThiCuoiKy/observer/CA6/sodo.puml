@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IListenerObserver {
+    +listen(PlayerData data)
+}
+
+class PlayerData {
+    #int thoigian, luotchoi, diem;
+}
+
+class DashBoard {
+
+}
+
+IListenerObserver <|... DashBoard
+PlayerData ---> IListenerObserver:observer
+PlayerData <--- DashBoard
+
+
+interface IListenerObserver1 {
+}
+
+class PlayerData1 {}
+
+class DashBoard1 {}
+
+IListenerObserver1 <|.. DashBoard1
+PlayerData1 --> IListenerObserver1:observer
+PlayerData1 <-- DashBoard1
+
+
+
+@enduml

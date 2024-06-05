@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class PC {
+    # String main, cpu, ram, storage, screen;
+    # int val_main, val_cpu, val_storage, val_screen;
+    +{abstract} String build()
+    +{abstract} int value()
+}
+
+class ConcrePC {
+
+}
+
+abstract class PCDecorator {
+
+}
+
+class UpgradeRam {
+    #String n_cpu
+    #int nval_cpu
+}
+
+class UpgradeCPU {
+    #String n_ram
+    #int nval_cpu
+}
+
+PC <|-- ConcrePC
+PC <|-- PCDecorator
+PCDecorator --> PC:pc
+
+PCDecorator <|-- UpgradeRam
+PCDecorator <|-- UpgradeCPU
+
+@enduml
