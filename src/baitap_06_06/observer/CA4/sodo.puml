@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IListenerObserver {
+    + void addnewTopic(String s)
+    + void updateTopic(int i, String s)
+}
+
+class Topic {
+    List<String> topics
+    List<IListenerObserver> observer
+    + void addTopic(String s)
+    + void updateTopic(int i, String s)
+}
+
+class ThanhVienA {
+
+}
+
+class ThanhVienB {
+
+}
+
+IListenerObserver <|.. ThanhVienA
+IListenerObserver <|.. ThanhVienB
+Topic *--> IListenerObserver:observers
+Topic <-- ThanhVienA
+Topic <-- ThanhVienB
+
+@enduml

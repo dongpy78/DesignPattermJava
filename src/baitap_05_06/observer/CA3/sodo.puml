@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface TiGiaObserver {
+    +void update(float delta)
+}
+
+class TiGia {
+    + void attach(TiGiaObserver observer)
+    + void dettach((TiGiaObserver observer)
+    + void capNhatTiGia(float delta)
+}
+
+class NhaDauTuA {
+
+}
+
+class NhaDauTuB {
+
+}
+
+TiGiaObserver <|.. NhaDauTuA
+TiGiaObserver <|.. NhaDauTuB
+TiGia *--> TiGiaObserver:observers
+TiGia <-- NhaDauTuA:t
+TiGia <-- NhaDauTuB:t
+
+@enduml

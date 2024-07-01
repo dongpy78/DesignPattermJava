@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ITopicObserver {
+    + void receiveNewTopic(String s)
+    + void updateTopic(int i, String s)
+}
+
+class Topic {
+    - List<String> topics = new ArrayList
+    - List<ITopicObserver> observers = new ArrayList
+    + void attach(ITopicObserver observer)
+    + void dettach(ITopicObserver observer)
+    + void addTopic(String s)
+    + void updateTopic(int i, String s)
+}
+
+class ThanhVienA {
+
+}
+
+class ThanhVienB {
+
+}
+
+ITopicObserver <|.. ThanhVienA
+ITopicObserver <|.. ThanhVienB
+Topic *--> ITopicObserver:observers
+Topic <-- ThanhVienA:topic
+Topic <-- ThanhVienB:topic
+
+
+@enduml
